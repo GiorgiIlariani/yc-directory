@@ -21,9 +21,11 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const post = await client.fetch(STARTUP_BY_ID_QUERY, { id });
 
-  const { select: editorPosts } = await client.fetch(PLAYLIST_BY_SLUG_QUERY, {
-    slug: "editor-picks-new ",
-  });
+  // const { select: editorPosts } = await client.fetch(PLAYLIST_BY_SLUG_QUERY, {
+  //   slug: "editor-picks-new ",
+  // });
+
+  // // console.log({ editorPosts });
 
   if (!post) return notFound();
 
@@ -81,7 +83,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
         </div>
         <hr className="divider" />
 
-        {editorPosts?.length && (
+        {/* {editorPosts?.length && (
           <div className="max-w-xl mx-auto">
             <p className="text-30-semibold">Editors Picks</p>
 
@@ -91,7 +93,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
               ))}
             </ul>
           </div>
-        )}
+        )} */}
 
         {/* selected startups */}
         <Suspense fallback={<div className="view-skeleton" />}>
