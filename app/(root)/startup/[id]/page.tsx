@@ -10,8 +10,6 @@ import View from "@/components/ViewSees";
 
 const md = markdownit();
 
-export const experimenatal_ppr = true;
-
 type Author = {
   _id: string;
   image?: string | null;
