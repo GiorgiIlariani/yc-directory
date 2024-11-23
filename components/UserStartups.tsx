@@ -9,8 +9,8 @@ const UserStartups = async ({ id }: { id: string }) => {
   return (
     <>
       {startups.length > 0 ? (
-        startups.map((startup: any) => (
-          <StartupCard key={startup._id} post={startup} />
+        startups.map((startup: unknown) => (
+          <StartupCard key={(startup as any)._id} post={startup as any} />
         ))
       ) : (
         <p className="no-result">No posts yet</p>
