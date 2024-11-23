@@ -10,7 +10,6 @@ import { notFound } from "next/navigation";
 import React, { Suspense } from "react";
 import markdownit from "markdown-it";
 import View from "@/components/ViewSees";
-import StartupCard from "@/components/StartupCard";
 
 const md = markdownit();
 
