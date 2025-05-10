@@ -21,7 +21,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
   } = post;
 
   return (
-    <li className="startup-card group">
+    <li className="startup-card group flex flex-col justify-between">
       <div className="flex-between">
         <p className="startup_card_date">{formatDate(_createdAt)}</p>
         <div className="flex gap-1.5">
@@ -44,9 +44,9 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             <p className="text-16-medium line-clamp-1">Anonymous</p> // Fallback for missing author
           )}
           <Link href={`/startup/${_id}`}>
-            <h3 className="text-26-semibold line-clamp-1">
+            <h3 className="text-26-semibold line-clamp-1 break-all">
               {title || "Untitled Startup"}
-            </h3>{" "}
+            </h3>
             {/* Fallback for title */}
           </Link>
         </div>
@@ -77,10 +77,9 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
         )}
       </Link>
 
-      <div className="flex-between gap-3 mt-5">
+      <div className="flex-between gap-3 mt-auto pt-4">
         <Link href={`/?query=${category?.toLowerCase() || "uncategorized"}`}>
-          <p className="text-16-medium">{category || "Uncategorized"}</p>{" "}
-          {/* Fallback for category */}
+          <p className="text-16-medium">{category || "Uncategorized"}</p>
         </Link>
         <Button className="startup-card_btn" asChild>
           <Link href={`/startup/${_id}`}>Details</Link>
